@@ -3,13 +3,24 @@
 Language: Modula<sup>-</sup>
 
 ## Build
+
+Make sure following is installed:
+* GCC/G++
+* flex (2.6.4)
+* bison (3.0.4)
+* make
+* jre8 / openjkd-8
+
 Building will only work on LINUX system.
+
 On Windows, you'll need to use WSL to build it.
-Tested on Ubuntu 18.04
+
+Tested on Ubuntu 18.04 and Windows 10 (WSL Ubuntu 18.04)
 
 To build
 
 ```
+chmod +x javaa
 make clean
 make
 ```
