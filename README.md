@@ -26,6 +26,8 @@ make
 ```
 
 ## Usage
+
+```
 compiler [options] filename
 
 Options:
@@ -37,6 +39,7 @@ Options:
     -t    Showing lex token information.
     -p    Showing yacc parsing trace.
     -v    Showing all trace information (same as -t -p).
+```    
     
 ## Extra implementation
 
