@@ -1,0 +1,41 @@
+module Types
+  var b : boolean;
+      i : integer;
+      s : string;
+      r : real;
+  
+  procedure bfun(b:boolean) : boolean
+  begin
+    return b;
+  end bfun;
+  procedure ifun(i:integer) : integer
+  begin
+    return i;
+  end ifun;
+  procedure sfun(s:string) : string
+  begin
+    return s;
+  end sfun;
+  procedure rfun(r:real) : real
+  begin
+    return r;
+  end rfun;
+begin
+  println "Assignment";
+  b := true;
+  i := -15;
+  s := "str";
+  r := 3.1415926;
+
+  println b;
+  println i;
+  println s;
+  println r;
+  println "";
+
+  println "Function Call";
+  println bfun(false);
+  println ifun(-16);
+  println sfun("str2");
+  println rfun(-2.376666);
+end Types.

@@ -1,0 +1,45 @@
+(*
+ 1. Local / Global array
+ 2. Can be any kind of array
+ 3. Array item read / assign
+*)
+module Arrays
+
+  var Index : integer;
+      A: array [1, 10] of integer;
+
+    procedure init()
+    begin
+      A[1] := 1;
+      A[2] := 1;
+      FOR Index := 3 TO 10 DO
+        A[Index] := A[Index - 1] + A[Index - 2];
+      END;
+    END init;
+
+    procedure localArray()
+      var Lines: array [5, 7] of String;
+    begin
+      Lines[5] := "Printing";
+      Lines[6] := "local";
+      Lines[7] := "array";
+      FOR Index := 5 TO 7 DO
+        PrintLn Lines[Index];
+      END;
+    END localArray;
+    
+begin
+  init();
+
+  // Print
+  FOR Index := 10 TO 1 BY -1 DO
+    PrintLn A[Index];
+  END;
+  PrintLn "";
+
+  PrintLn "A[6] = 8; A[A[6]] = A[8] = 21";
+  PrintLn A[A[6]];
+  
+  PrintLn "";
+  localArray();
+end Arrays.

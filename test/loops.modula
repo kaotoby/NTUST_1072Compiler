@@ -1,0 +1,95 @@
+(*
+ 1. Repeat / Until Loop
+ 2. While Loop
+ 3. For Loop
+ 4. For Loop with Continue
+ 5. For Loop with Exit
+ 6. For Loop with By (different step)
+ 7. For Loop with negative By (different step)
+ 8. For Loop with variable condition
+ 9. Loop loop with Exit
+*)
+module Loops
+    CONST Where = 11;
+    VAR  Index   : INTEGER;
+         What   : INTEGER;
+begin
+   Println "REPEAT loop     = ";
+   Index := 0;
+   REPEAT
+      Index := Index + 1;
+      Print Index;
+      Print " ";
+   UNTIL Index = 5;
+   Println "";
+
+   Println "WHILE loop      = ";
+   Index := 0;
+   WHILE Index < 5 DO
+      Index := Index + 1;
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   Println "First FOR loop  = ";
+   FOR Index := 1 TO 5 DO
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   Println "First FOR loop with CONTINUE  = ";
+   FOR Index := 1 TO 5 DO
+      IF Index = 3 THEN
+         CONTINUE;
+      END;
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   Println "First FOR loop with EXIT  = ";
+   FOR Index := 1 TO 5 DO
+      IF Index = 3 THEN
+         EXIT;
+      END;
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   Println "Second FOR loop = ";
+   FOR Index := 5 TO 25 BY 4 DO
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+   
+   Println "Third FOR loop = ";
+   FOR Index := 5 TO -35 BY -7 DO
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   What := 16;
+   Println "Fourth FOR loop = ";
+   FOR Index := (What - 21) TO (What * 2) BY Where DO
+      Print Index;
+      Print " ";
+   END;
+   Println "";
+
+   Index := 1;
+   Println "LOOP statement = ";
+   LOOP
+      Print Index;
+      Print " ";
+      IF Index = 5 THEN
+         EXIT;
+      END;
+      Index := Index + 1;
+   END;
+   Println "";
+end Loops.

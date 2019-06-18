@@ -1,0 +1,74 @@
+module Errors
+
+const constInt = 5;
+
+// WARNING: Invalid array range
+var invalidArray: array [10, 9] of integer;
+    arr: array [3, 5] of integer;
+    b : boolean;
+    i : integer;
+// WARNING: Duplicate identifier
+    s, s : string;
+// WARNING: Duplicate identifier
+    constInt : integer;
+
+// WARNING: Duplicate argument identifier
+procedure fun(a:integer, a:boolean) : integer
+begin
+  
+  // WARNING: Wrong return type
+  return;
+  // WARRING: Procedure end identifier mismatch
+end fun1;
+
+// WARNING: Duplicate function identifier
+procedure fun(a:integer, b: integer)
+begin
+  // WARNING: Wrong return type
+  return 6;
+end fun;
+
+begin
+  // WARNING: Cant't reassign const
+  constInt := 6;
+  // WARNING: Invalid array range
+  i := arr[2];
+  // WARNING: Can't read array;
+  read arr;
+
+  (* Type safe *)
+  // WARNING: Invalid adding type
+  i := i + 2.1;
+  // WARNING: Assignment type mismatch
+  b := arr[3];
+  // WARNING: Invalid relation type
+  // WARNING: Invalid relation type
+  b := "a" < "b";
+  // WARNING: Invalid type for negative
+  b := -b;
+  // WARNING: Invalid type for condition
+  if (10) then
+  end;
+
+  (* Function argument *)
+  // WARNING: Invalid argument type
+  fun(10, b);
+  // WARNING: Invalid argument 0
+  // WARNING: Invalid argument 1
+  fun();
+
+  (* Identifier existence *)
+  // WARNING: Identifier not found
+  // WARNING: Identifier is void
+  i := invaild;
+  // WARNING: Function not found
+  invalidFun();
+
+  (* Loop control *)
+  // WARNING: Invalid continue location
+  continue;
+  // WARNING: Invalid exit location
+  exit;
+
+// WARNING: Module end identifier mismatch
+end Errors1.

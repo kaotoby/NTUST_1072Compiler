@@ -1,0 +1,27 @@
+(*
+ 1. String variable / Return
+ 2. Real variable / Return
+ 3. Read
+*)
+module Extra
+    var n : Real;
+    procedure fun1(str : String) : String
+    begin
+        print str;
+        Read n;
+        
+        if (n < 1.0) then
+            return "n < 1";
+        elsif (n < 10.0) then
+            return "n < 10";
+        elsif (n < 100.0) then
+            return "n < 100";
+        elsif (n < 1000.0) then
+            return "n < 1000";
+        else
+            return "n >= 1000";
+        end;
+    end fun1;
+begin
+    println fun1("Please input n: ");
+end Extra.

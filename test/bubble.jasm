@@ -1,0 +1,169 @@
+/*-------------------------------------------------*/
+/*               Java Assembly Code                */
+/*-------------------------------------------------*/
+class Bubble
+{
+    field static int i
+    field static int j
+    field static int[] A
+    method public static void swap(int, int)
+    max_stack 15
+    max_locals 3
+    {
+        getstatic int[] Bubble.A
+        iload 0
+        iaload        istore 2
+        getstatic int[] Bubble.A
+        iload 0
+        getstatic int[] Bubble.A
+        iload 1
+        iaload        iastore
+        getstatic int[] Bubble.A
+        iload 1
+        iload 2
+        iastore
+        return
+    }
+    method public static void main(java.lang.String[])
+    max_stack 15
+    max_locals 3
+    {
+        bipush 5
+        newarray int
+        putstatic int[] Bubble.A
+        sipush 0
+        putstatic int Bubble.i
+L0_ForBegin:
+        getstatic int Bubble.i
+        sipush 5
+        sipush 1
+        isub
+        isub
+        ifle L1_True
+        iconst_0
+        goto L1_False
+L1_True: 
+        iconst_1
+L1_False:
+        ifeq L0_ForExit
+        getstatic int[] Bubble.A
+        getstatic int Bubble.i
+        new java.util.Scanner
+        dup
+        getstatic java.io.InputStream java.lang.System.in
+        invokenonvirtual void java.util.Scanner.<init>(java.io.InputStream)
+        invokevirtual int java.util.Scanner.nextInt()
+        iastore
+L0_ForContinue:
+        getstatic int Bubble.i
+        sipush 1
+        iadd
+        putstatic int Bubble.i
+        goto L0_ForBegin
+L0_ForExit:
+        nop
+        sipush 0
+        putstatic int Bubble.i
+L2_ForBegin:
+        getstatic int Bubble.i
+        sipush 5
+        sipush 2
+        isub
+        isub
+        ifle L3_True
+        iconst_0
+        goto L3_False
+L3_True: 
+        iconst_1
+L3_False:
+        ifeq L2_ForExit
+        sipush 0
+        putstatic int Bubble.j
+L4_ForBegin:
+        getstatic int Bubble.j
+        sipush 5
+        getstatic int Bubble.i
+        isub
+        sipush 2
+        isub
+        isub
+        ifle L5_True
+        iconst_0
+        goto L5_False
+L5_True: 
+        iconst_1
+L5_False:
+        ifeq L4_ForExit
+        getstatic int[] Bubble.A
+        getstatic int Bubble.j
+        iaload        getstatic int[] Bubble.A
+        getstatic int Bubble.j
+        sipush 1
+        iadd
+        iaload        isub
+        ifgt L7_True
+        iconst_0
+        goto L7_False
+L7_True: 
+        iconst_1
+L7_False:
+        ifeq L6_Else
+        getstatic int Bubble.j
+        getstatic int Bubble.j
+        sipush 1
+        iadd
+        invokestatic void Bubble.swap(int, int)
+        goto L6_IfExit
+L6_Else:
+        nop
+L6_IfExit:
+        nop
+L4_ForContinue:
+        getstatic int Bubble.j
+        sipush 1
+        iadd
+        putstatic int Bubble.j
+        goto L4_ForBegin
+L4_ForExit:
+        nop
+L2_ForContinue:
+        getstatic int Bubble.i
+        sipush 1
+        iadd
+        putstatic int Bubble.i
+        goto L2_ForBegin
+L2_ForExit:
+        nop
+        sipush 0
+        putstatic int Bubble.i
+L8_ForBegin:
+        getstatic int Bubble.i
+        sipush 5
+        sipush 1
+        isub
+        isub
+        ifle L9_True
+        iconst_0
+        goto L9_False
+L9_True: 
+        iconst_1
+L9_False:
+        ifeq L8_ForExit
+        getstatic java.io.PrintStream java.lang.System.out
+        getstatic int[] Bubble.A
+        getstatic int Bubble.i
+        iaload        invokevirtual void java.io.PrintStream.print(int)
+        getstatic java.io.PrintStream java.lang.System.out
+        ldc " "
+        invokevirtual void java.io.PrintStream.print(java.lang.String)
+L8_ForContinue:
+        getstatic int Bubble.i
+        sipush 1
+        iadd
+        putstatic int Bubble.i
+        goto L8_ForBegin
+L8_ForExit:
+        nop
+        return
+    }
+}
