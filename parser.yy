@@ -65,7 +65,6 @@ std::stack<TokenNode*> loopStack;
         class FlexScanner;
         class BisonParser;
     }
-    typedef struct Token Token;
 
     struct SymbolTableEntryListItem {
         struct SymbolTableEntryListItem* next;
