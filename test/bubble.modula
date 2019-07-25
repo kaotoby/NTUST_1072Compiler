@@ -1,0 +1,31 @@
+module Bubble
+  const length = 5;
+  var i, j : Integer;
+      A: array [0, 4] of integer;
+
+procedure myswap(a:integer, b:integer)
+  var temp : Integer;
+begin
+  temp := A[a];
+  A[a] := A[b];
+  A[b] := temp;
+end myswap;
+
+begin
+    for i := 0 to (length - 1) do
+      read A[i];
+    end;
+
+    for i := 0 to (length - 2) do
+        for j := 0 to (length - i - 2) do
+            if (A[j] > A[j + 1]) then
+              myswap(j, j + 1);
+            end;
+        end;
+    end;
+
+    for i := 0 to (length - 1) do
+      print A[i];
+      print " ";
+    end;
+end Bubble.

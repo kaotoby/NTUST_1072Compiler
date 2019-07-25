@@ -1,0 +1,26 @@
+
+module Bubble2
+  const length = 5;
+  var i, j : Integer;
+      A: array [0, 4] of integer;
+      temp : Integer;
+begin
+    for i := 0 to (length - 1) do
+      read A[i];
+    end;
+
+    for i := 0 to (length - 2) do
+        for j := 0 to (length - i - 2) do
+            if (A[j] > A[j + 1]) then
+              temp := A[j];
+              A[j] := A[j + 1];
+              A[j + 1] := temp;
+            end;
+        end;
+    end;
+
+    for i := 0 to (length - 1) do
+      print A[i];
+      print " ";
+    end;
+end Bubble2.

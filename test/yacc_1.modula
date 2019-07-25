@@ -1,0 +1,96 @@
+module Test1
+    // global constants and variables
+    const GCs = "Hey "" There";
+        GCi = -25;
+        GCf = 3.14E-2;
+        GCb = true;
+    var Gs : string;
+        Gi1, Gi2 : integer;
+        Gd : real;
+        Gb : boolean;
+        Ga1, Ga2 : array [0,2] of real;
+        Gai : array [0,10] of integer;
+
+    // procedure declaration
+    procedure fun1(a:integer, b:string) : integer
+        // local constants and variables
+        const LCs = "Hey "" There";
+            LCi = -25;
+            LCf = 3.14E2;
+            LCb = true;
+        var Ls : string;
+            Li : integer;
+            Ld : real;
+            Lb : boolean;
+            La1, La2 : array [0,2] of real;
+    begin
+        Ls := "aaa";
+        Li := 1;
+        Ld := -0.8763E+2;
+        La1[0] := -2.5E4;
+        Li := Li * -2;
+
+        return LCi % Li;
+    end fun1;
+
+    procedure fun2 : boolean
+        // local constants and variables
+        const LCs = "Hey "" There";
+            LCi = 30;
+            LCf = -13.0;
+            LCb = false;
+    begin
+        Ga1[5 + 6 / 2] := LCf;
+
+        return fun1(1, "a") <> 9;
+    end fun2;
+    procedure fun3(a: boolean)
+        // local constants and variables
+        var Ls : string;
+            Li : integer;
+            Ld : real;
+            Lb : boolean;
+            La1, La2 : array [0,2] of real;
+    begin
+        La1[GCi] := 1.0;
+        La2[fun1(fun1(2, "c"), "a")] := La1[GCi] + 5.0;
+        La1[GCi] := La2[fun1(fun1(2, "c"), "a")];
+
+        return;
+    end fun3;
+    
+begin
+    READ Gd;
+    if (~Gb) then
+        Gi1 := 1;
+    end;
+
+    if (fun2()) then
+        Gai[0] := fun1(Gai[Gi1], "tr");
+    else
+        Gai[1] := fun1(Gai[Gi1], "str");
+    end;
+
+    if (true && false) then
+        while (fun1(GCi, GCs) = 7) do
+            if (GCb) then
+                return;
+            end;
+        end;
+    end;
+    if (true = false) then
+    end;
+    if (fun2() && fun2()) then
+        println -GCi;
+    else
+        if (fun2() || fun2()) then
+            if (true) then
+                print 123;
+            end;
+        else
+            return;
+        end;
+    end;
+    fun3(true);
+    
+end Test1.
