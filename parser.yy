@@ -980,7 +980,7 @@ assignable_item:
         }
         // VALIDATION: Non const
         if (identifier->symbolTableEntry != NULL && identifier->symbolTableEntry->entryType == EntryType::Constant) {
-            Warn(@1, "Can not re-assign constant variable: "+identifier->symbolTableEntry->name)
+            Warn(@1, "Can not re-assign constant variable: "+identifier->symbolTableEntry->name);
         }
         $$ = identifier;
     }
