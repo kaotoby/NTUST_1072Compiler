@@ -86,9 +86,9 @@ std::stack<TokenNode*> loopStack;
 }
 /* Union variables for each node */
 %union 	{
-	int iValue;
-	float fValue;
-	char *sValue;
+    int iValue;
+    float fValue;
+    char *sValue;
     bool bValue;
     ValueType valueType;
     SymbolTableEntryListItem* sValueList;
@@ -568,7 +568,7 @@ primary_expression:
         MakeIdentifierNode(@1, $1, identifier);
         // VALIDATION: Non function
         if (identifier->symbolTableEntry != NULL && identifier->symbolTableEntry->entryType == EntryType::Function) {
-            Warn(@1, "Invalid procedure call, can not use procedure as variable: "+identifier->symbolTableEntry->name)
+            Warn(@1, "Invalid procedure call, can not use procedure as variable: "+identifier->symbolTableEntry->name);
         }
         $$ = identifier;
     }
@@ -600,7 +600,7 @@ postfix_expression:
         Trace("postfix_expression", "function_call");
         // VALIDATION: Return type non-null
         if ($1->valueType == ValueType::Void) {
-            Warn(@1, "Fuction return type of void is not allowed in expression: " + $1->symbolTableEntry->name)
+            Warn(@1, "Fuction return type of void is not allowed in expression: " + $1->symbolTableEntry->name);
         }
         $$ = $1;
     }
